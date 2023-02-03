@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+import Landing from './pages/Landing';
+import About from './pages/About';
+
+import Header from './components/Header';
 
 function App() {
+  const [page, setPage] = useState('landing');
+
+  const switchPage = () => {
+    switch (page) {
+      case 'landing':
+        return <Landing />
+      case 'about':
+        return <About />
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header setPage={setPage} />
+
+      {/* {page === 'landing' ? <Landing /> : <About />} */}
+      {switchPage()}
+    </>
   );
 }
 
