@@ -1,10 +1,12 @@
-function Header(props) {
+import { NavLink } from 'react-router-dom';
+
+function Header() {
   return (
     <header>
       <h3>Logo</h3>
       <nav>
-        <button onClick={() => props.setPage('landing')}>Home</button>
-        <button onClick={() => props.setPage('about')}>About</button>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
       </nav>
     </header>
   )

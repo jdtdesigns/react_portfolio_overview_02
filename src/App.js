@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Landing from './pages/Landing';
 import About from './pages/About';
@@ -6,13 +6,14 @@ import About from './pages/About';
 import Header from './components/Header';
 
 function App() {
-  const [page, setPage] = useState('landing');
-
   return (
     <>
-      <Header setPage={setPage} />
+      <Header />
 
-      {page === 'landing' ? <Landing /> : <About />}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </>
   );
 }

@@ -47,3 +47,7 @@ header nav button {
   font-size: .95rem;
   cursor: pointer;
 }
+
+header nav a.active {
+  text-decoration: underline;
+}
