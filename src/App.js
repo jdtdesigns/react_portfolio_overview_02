@@ -8,21 +8,11 @@ import Header from './components/Header';
 function App() {
   const [page, setPage] = useState('landing');
 
-  const switchPage = () => {
-    switch (page) {
-      case 'landing':
-        return <Landing />
-      case 'about':
-        return <About />
-    }
-  }
-
   return (
     <>
       <Header setPage={setPage} />
 
-      {/* {page === 'landing' ? <Landing /> : <About />} */}
-      {switchPage()}
+      {page === 'landing' ? <Landing /> : <About />}
     </>
   );
 }
